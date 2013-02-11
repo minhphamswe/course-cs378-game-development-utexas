@@ -18,6 +18,11 @@ function Update () {
         if (explosion) {
             Instantiate(explosion, transform.position, transform.rotation);
         }
+
+        if (audio.clip) {
+            audio.Play();
+        }
+
         var position = Vector3(Random.Range(-6, 6), Random.Range(-4, 4), 0);
         RespawnWaitTime();
         transform.position = position;
