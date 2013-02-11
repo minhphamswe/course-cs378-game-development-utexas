@@ -10,6 +10,7 @@ function Start () {
     storeClicks = numberOfClicks;
     var startPosition = Vector3(Random.Range(-6, 6), Random.Range(-4, 4), 0);
     transform.position = startPosition;
+    RandomColor();
 }
 
 function Update () {
