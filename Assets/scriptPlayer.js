@@ -2,6 +2,8 @@ var tagName : String;
 var rayDistance : float = 100;
 var score : int = 0;
 var gameTime : float = 20.0;
+var loadWaitTime : float = 3.0;
+var numberOfPointsToWin : int = 5;
 
 function Start() {
     InvokeRepeating("CountDown", 1.0, 1.0);
@@ -33,6 +35,13 @@ function Update () {
 function CountDown() {
     if (--gameTime <= 0) {
         CancelInvoke("CountDown");
+        // yield WaitForSeconds(loadWaitTime);
+        if (score >= numberOfPointsToWin) {
+            Application.LoadLevel("sceneScreenWin");
+        }
+        else {
+            Application.LoadLevel("sceneScreenLose");
+        }
     }
 }
 
